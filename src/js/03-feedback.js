@@ -11,7 +11,7 @@ const refs = {
 refs.form.addEventListener('input', throttle(onFormInput, 500));
 refs.form.addEventListener('submit', onFormSubmit);
 
-populateFormData();
+populateForm();
 
 function onFormInput(e) {
   const formElements = e.target.form.elements;
@@ -27,7 +27,7 @@ function onFormInput(e) {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(formValue));
 }
 
-function populateFormData() {
+function populateForm() {
   const savedImputs = JSON.parse(localStorage.getItem('feedback-form-state'));
   if (savedImputs) {
     refs.email.value = savedImputs.email;
